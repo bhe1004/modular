@@ -12,6 +12,21 @@ It allows you to develop in an isolated environment, outside of the core Isaac L
 
 **Keywords:** extension, template, isaaclab
 
+## Reproducing the development environment
+
+```bash
+git clone --recurse-submodules git@github.com:bhe1004/modular.git
+cd modular
+bash setup.sh          # creates conda env "modular" (Python 3.11.15)
+conda activate modular
+python scripts/list_envs.py
+```
+
+`setup.sh` clones Isaac Lab v2.3.0 (commit `3c6e67bb`) into the git-ignored `_isaaclab/`, installs the exact
+pip snapshot in `requirements-lock.txt` (Isaac Sim 5.1.0, torch 2.7.0+cu128, rsl-rl-lib 3.0.1, skrl 2.1.0)
+with `--no-deps`, and installs the Isaac Lab packages and `source/modular` in editable mode.
+The custom modular PPO lives in `scripts/modular_rl/`; `reference/ppo` is a reference submodule only.
+
 ## Installation
 
 - Install Isaac Lab by following the [installation guide](https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html).

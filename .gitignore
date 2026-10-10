@@ -69,3 +69,8 @@ tests/
 
 # Docker history
 .isaac-lab-docker-history
+
+# Local-only (recreated by setup.sh or not needed)
+/_isaaclab/
+/reference/HAMNet/
+/reference/*.pdf
